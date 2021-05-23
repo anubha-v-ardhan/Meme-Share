@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         progress_circular.visibility = View.VISIBLE
 
-        val queue = Volley.newRequestQueue(this)
         val url = "https://meme-api.herokuapp.com/gimme"
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -73,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
 // Access the Request to the RequestQueue
 
-        queue.add(jsonObjectRequest)
+        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
     }
 
